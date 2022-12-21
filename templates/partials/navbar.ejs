@@ -1,0 +1,37 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <%- include("./flash.ejs") %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+          </ul>
+          <div class="navbar-nav ms-auto">
+            <% if(!currentUser) { %>
+            <a class="nav-link login" href="/login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            <a class="nav-link register" href="/register"><i class="fa-solid fa-address-card"></i> Register</a>
+            <% } else if(currentUser) { %>
+            <!-- <form action="/<%= currentUser.username %>/profile" method="GET">
+              <button class="btn btn-primary"><%= currentUser.username %></button>
+            </form> -->
+            <a class="nav-link" href="/<%= currentUser.username %>/profile"><i class="fa-regular fa-user"></i> <%= currentUser.username %></a>
+            <form action="/logout" method="POST">
+              <button class="btn btn-danger logout">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
+            </form>
+            <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>

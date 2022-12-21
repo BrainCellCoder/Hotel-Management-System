@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OYO 2.0</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <%- include("../partials/navbar.ejs") %>
+  
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img style="height:700px" src="img/r1.jpeg" class="d-block w-100 h-70" alt="...">
+        <div class="carousel-caption d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img style="height:700px" src="img/r2.jpg" class="d-block w-100 h-70" alt="...">
+        <div class="carousel-caption d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img style="height:700px" src="img/r3.jpg" class="d-block w-100 h-70" alt="...">
+        <div class="carousel-caption d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container home-rooms">
+    <h1 class="my-5 text-center">FEATURED ROOMS</h1>
+    <div class="row">
+      <% for(let room of roomsFeatured) { %>
+      <div class="col-lg-4 col-md-6">
+        <div class="card w-100 mt-4 shadow" style="width: 20rem;">
+          <img src="<%= room.image %>" class="card-img-top" style="height:15rem" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><b>Room name:</b> <%= room.name %></h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p> -->
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item location"><b>Location:</b> <%= room.location %> <i class="fa-solid fa-location-dot"></i></li>
+            <li class="list-group-item"><b>Price:</b> <span class="rupee"><i class="fa-solid fa-indian-rupee-sign"></i></span><%= room.price %>/night</li>
+            <li class="list-group-item" style="display: flex; align-items: center; justify-content: space-between;"><a href="/<%= room._id %>"><button class="btn btn-success">Book Now</button></a><span style="color: yellow;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></li>
+          </ul>
+          <!-- <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div> -->
+        </div>
+      </div>
+      <% } %>
+
+      <!-- <div class="col-lg-4 col-md-6">
+        <div class="card w-100 mt-4" style="width: 20rem;">
+          <img src="img/r2.jpg" class="card-img-top" style="height:15rem" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="col-lg-4 col-md-6">
+        <div class="card w-100 mt-4" style="width: 20rem;">
+          <img src="img/r3.jpg" class="card-img-top" style="height:15rem" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+  <div class="affordable-rooms mt-5 pt-5" style="background-image: url('img/affordable-bg.jpeg');">
+    <h1 class="text-center">AFFORDABLE ROOMS</h1>
+    <div class="container">
+      <div class="row">
+        <% for(room of roomsAffordable) { %>
+        <div class="col-lg-4 col-md-6">
+          <div class="card w-100 mt-4 shadow" style="width: 20rem;">
+            <img src="<%= room.image %>" class="card-img-top" style="height:15rem" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= room.name %></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item location"><b>Location:</b> <%= room.location %> <i class="fa-solid fa-location-dot"></i></li>
+              <li class="list-group-item"><b>Price:</b> <span class="rupee"><i class="fa-solid fa-indian-rupee-sign"></i></span><%= room.price %>/night</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+        <% } %>
+
+        <!-- <div class="col-lg-4 col-md-6">
+          <div class="card w-100 mt-4 shadow" style="width: 20rem;">
+            <img src="img/r2.jpg" class="card-img-top" style="height:15rem" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="col-lg-4 col-md-6">
+          <div class="card w-100 mt-4 shadow" style="width: 20rem;">
+            <img src="img/r3.jpg" class="card-img-top" style="height:15rem" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="pg-hostel container mt-5">
+    <h1 class="text-center">Find a PG & Hostel</h1>
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="card w-100 mt-4" style="width: 18rem; position: relative;">
+          <img src="https://img.freepik.com/premium-photo/teenager-student-girl-yellow-pointing-finger-side_1368-40175.jpg?w=2000" class="card-img-top" style="height:15rem" alt="...">
+          <div class="explore">
+            <p>PG for Grils<br><a href="/pg-girls">Explore -></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card w-100 mt-4" style="width: 18rem; position: relative;">
+          <img src="https://st2.depositphotos.com/1017986/10563/i/950/depositphotos_105633970-stock-photo-happy-student-boy-with-school.jpg" class="card-img-top" style="height:15rem" alt="...">
+          <div class="explore">
+            <p>PG for Boys<br>Explore -></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card w-100 mt-4" style="width: 18rem; position: relative;">
+          <img src="https://img.freepik.com/free-photo/happy-young-female-student-holding-notebooks-from-courses-smiling-camera-standing-spring-clothes-against-blue-background_1258-70161.jpg?w=2000" class="card-img-top" style="height:15rem" alt="...">
+          <div class="explore">
+            <p>Hostel for Girls<br>Explore -></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card w-100 mt-4" style="width: 18rem; position: relative;">
+          <img src="https://media.gettyimages.com/id/1338912354/photo/young-student.jpg?s=612x612&w=gi&k=20&c=hw0paYHsr3re9bigIh2mCnK_HO0P6utaQ4poPuEQzrA=" class="card-img-top" style="height:15rem" alt="...">
+          <div class="explore">
+            <p>Hostel for Boys<br>Explore -></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

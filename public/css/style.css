@@ -1,0 +1,161 @@
+
+.carousel-caption{  
+  background: rgba(0, 0, 0, 0.44);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  right: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+}
+
+.home-rooms .card:hover img{
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+.affordable-rooms .card:hover img{
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+.location i{
+  color: red;
+}
+
+.rupee{
+  color: green;
+}
+
+.clean .sanitized{
+  font-weight: 700;
+  padding: 5px;
+  font-size: 13px;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 5px;
+  background-image: linear-gradient(to right, #ff0000, #fe0422, #fc1337, #f82248, #f22f57);
+}
+
+.clean .covid{
+  border: 2px solid #38b000;
+  display: flex;
+  align-items: center;
+  color: #38b000;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3px;
+}
+
+.clean .covid i{
+  font-weight: 800;
+  font-size: 10px;
+  margin-right: 5px;
+  background-color: #abff4f;
+  border-radius: 50%;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allowed{
+  /* background-color: #caf0f8; */
+  background-color: #edf2fb;
+  display: inline-block;
+  height: 33px;
+  padding: 5px;
+  color: #0077b6;
+  border-radius: 10px;
+}
+
+.form button{
+  font-size: 1.5rem;
+}
+
+.number-of-guest{
+  border: 2px solid pink;
+  display: inline-block;
+  padding-right: 3px ;
+  border-radius: 20px;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.form-check-input:hover{
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  background-color: #0096c7;
+}
+
+.number-of-guest span{
+  background-color: pink;
+  color: #ef233c;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 3px 10px;
+  border-radius: 50%;
+}
+
+.alert{
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.alert button{
+  height: 25px !important;
+  padding: 4px !important;
+  font-size: 15px !important;
+}
+
+.login{
+  color: #38b000 !important;
+  transition: 0.2s !important;
+  padding-right: 13px !important;
+  border-bottom: 2px solid transparent;
+}
+
+.login:hover{
+  color: #007200 !important;
+  border-bottom: 2px solid #007200;
+}
+
+.register{
+  color: #0077b6 !important;
+  border-bottom: 2px solid transparent;
+}
+
+.register:hover{
+  color: #023e8a !important;
+  border-bottom: 2px solid #023e8a;
+}
+
+.pg-hostel .explore{
+/* From https://css.glass */
+position: absolute;
+bottom: 0;
+padding: 0 10px;
+background: rgba(0, 0, 0, 0.50);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0px);
+width: 100%;
+color: white;
+-webkit-backdrop-filter: blur(0px);
+overflow: hidden;
+}
+
+.pg-hostel .explore:hover{
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.70);
+  transition: 0.3s;
+}
+
+.price{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content:space-between;
+}
